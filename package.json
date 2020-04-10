@@ -12,6 +12,7 @@
         "gatsby-plugin-sharp": "^2.5.3",
         "gatsby-source-filesystem": "^2.2.2",
         "gatsby-theme-digital-garden": "^0.2.3",
+        "gatsby-theme-digital-garden-portfolio": "^0.2.3",
         "gatsby-transformer-sharp": "^2.4.3",
         "prop-types": "^15.7.2",
         "react": "^16.12.0",

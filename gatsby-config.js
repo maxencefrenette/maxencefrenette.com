@@ -40,9 +40,21 @@ module.exports = {
                         href: '/',
                         label: 'Home'
                     },
-                    links: []
+                    links: [
+                      {
+                        href: '/projects',
+                        label: 'Projects'
+                      }
+                    ]
                 }
             }
+        },
+        {
+          resolve: 'gatsby-theme-digital-garden-portfolio',
+          options: {
+            projectsPath: '/projects',
+            projects: 'projects'
+          }
         }
     ]
 };
