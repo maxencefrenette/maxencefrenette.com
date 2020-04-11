@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
-export const query = graphql`
+const query = graphql`
     query ProjectsQuery {
         allMdx(sort: { fields: [frontmatter___order], order: ASC }) {
             edges {
@@ -19,13 +19,15 @@ export const query = graphql`
                         description
                         image
                     }
+                    body
                 }
             }
         }
     }
 `;
 
-const Projects = ({ data }) => {
+const Projects = () => {
+    const data = useStaticQuery(query);
     const projects = data.allMdx.edges.map((e: any) => e.node);
     
     return (
