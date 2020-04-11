@@ -13,9 +13,7 @@
         "gatsby-plugin-sharp": "^2.5.3",
         "gatsby-source-filesystem": "^2.2.2",
         "gatsby-theme-digital-garden": "^0.2.3",
-        "gatsby-theme-digital-garden-portfolio": "^0.2.3",
         "gatsby-transformer-sharp": "^2.4.3",
-        "prop-types": "^15.7.2",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
         "react-helmet": "^5.2.1"
@@ -25,10 +23,10 @@
         "prettier": "^1.19.1"
     },
     "scripts": {
+        "start": "yarn develop",
         "build": "gatsby build",
         "develop": "gatsby develop",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-        "start": "npm run develop",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
         "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
