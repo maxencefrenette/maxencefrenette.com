@@ -5,12 +5,20 @@ module.exports = {
         author: `Maxence Frenette`
     },
     plugins: [
+        `gatsby-plugin-typescript`,
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
                 path: `${__dirname}/images`
+            }
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: 'content/projects',
+                name: 'projects'
             }
         },
         `gatsby-transformer-sharp`,
@@ -41,20 +49,13 @@ module.exports = {
                         label: 'Home'
                     },
                     links: [
-                      {
-                        href: '/projects',
-                        label: 'Projects'
-                      }
+                        {
+                            href: '/projects',
+                            label: 'Projects'
+                        }
                     ]
                 }
             }
-        },
-        {
-          resolve: 'gatsby-theme-digital-garden-portfolio',
-          options: {
-            projectsPath: '/projects',
-            projects: 'projects'
-          }
         }
     ]
 };
