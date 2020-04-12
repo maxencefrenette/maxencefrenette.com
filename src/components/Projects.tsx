@@ -37,6 +37,7 @@ const query = graphql`
 
 const Container = styled.div`
     display: flex;
+    flex-wrap: wrap;
     margin: -15px;
     
     & > * {
