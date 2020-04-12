@@ -1,13 +1,22 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Project from './project';
+import styled from 'styled-components';
+
+function removeFileExtension(filename: string): string {
+    return filename.split('.')[0];
+}
 
 const query = graphql`
     query ProjectsQuery {
         allMdx(sort: { fields: [frontmatter___order], order: ASC }) {
             edges {
                 node {
-                    id
+                    parent {
+                        ... on File {
+                            name
+                        }
+                    }
                     frontmatter {
                         order
                     }
@@ -26,17 +35,37 @@ const query = graphql`
     }
 `;
 
+const Container = styled.div`
+    display: flex;
+    margin: -15px;
+    
+    & > * {
+        margin: 15px;
+    }
+`;
+
 const Projects = () => {
     const data = useStaticQuery(query);
+
     const projects = data.allMdx.edges.map((e: any) => e.node);
+    projects.sort(p => -p.frontmatter.order);
+
     const images = data.allFile.edges.map(e => e.node);
 
     return (
-        <div>
+        <Container>
             {projects.map(project => (
-                <Project key={project.id} project={project} image={images[0]} />
+                <Project
+                    key={project.id}
+                    project={project}
+                    image={images.find(
+                        i =>
+                            removeFileExtension(i.name) ===
+                            removeFileExtension(project.parent.name)
+                    )}
+                />
             ))}
-        </div>
+        </Container>
     );
 };
 
