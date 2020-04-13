@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const TypedMDXRenderer = MDXRenderer as any;
 
 export const query = graphql`
-    fragment ProjectFragment on Mdx {
+    fragment ProjectDetails on Mdx {
         frontmatter {
             title
             github
@@ -16,7 +16,7 @@ export const query = graphql`
         body
     }
 
-    fragment ProjectImageFragment on File {
+    fragment ProjectImageDetails on File {
         childImageSharp {
             fixed(width: 300) {
                 ...GatsbyImageSharpFixed
@@ -54,7 +54,12 @@ const Description = styled.div`
     }
 `;
 
-const Project = ({ project, image }) => {
+interface ProjectProps {
+    project: GatsbyTypes.ProjectDetailsFragment;
+    image: GatsbyTypes.ProjectImageDetailsFragment;
+}
+
+const Project: React.FC<ProjectProps> = ({ project, image }) => {
     console.log(project, image);
     const { frontmatter, body } = project;
     const { title, github, live } = frontmatter;
