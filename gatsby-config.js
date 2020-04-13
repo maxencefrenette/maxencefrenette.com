@@ -62,20 +62,24 @@ module.exports = {
 
         // Theme config
         {
-            resolve: 'gatsby-theme-digital-garden',
+            resolve: `@lekoarts/gatsby-theme-minimal-blog`,
             options: {
-                header: {
-                    home: {
-                        href: '/',
-                        label: 'Home'
+                navigation: [
+                    {
+                        title: `Blog`,
+                        slug: `/blog`
                     },
-                    links: [
-                        {
-                            href: '/projects',
-                            label: 'Projects'
-                        }
-                    ]
-                }
+                    {
+                        title: `Projects`,
+                        slug: `/projects`
+                    }
+                ],
+                externalLinks: [
+                    {
+                        name: `Github`,
+                        url: `https://github.com/maxencefrenette`
+                    }
+                ]
             }
         }
     ]

@@ -9,14 +9,28 @@ function removeFileExtension(filename: string): string {
 
 const query = graphql`
     query ProjectsQuery {
-        allMdx(sort: { fields: [frontmatter___order], order: ASC }) {
-            edges {
-                node {
-                    parent {
-                        ... on File {
-                            name
-                        }
-                    }
+        # allMdx(sort: { fields: [frontmatter___order], order: ASC }) {
+        #     edges {
+        #         node {
+        #             parent {
+        #                 ... on File {
+        #                     name
+        #                 }
+        #             }
+        #             frontmatter {
+        #                 order
+        #             }
+        #             ...ProjectFragment
+        #         }
+        #     }
+        # }
+        projects: allFile(
+            filter: { sourceInstanceName: { eq: "projects" } }
+            sort: { fields: childMdx___frontmatter___order, order: DESC }
+        ) {
+            nodes {
+                name
+                childMdx {
                     frontmatter {
                         order
                     }
@@ -24,7 +38,9 @@ const query = graphql`
                 }
             }
         }
-        allFile(filter: { sourceInstanceName: { eq: "project-images" } }) {
+        images: allFile(
+            filter: { sourceInstanceName: { eq: "project-images" } }
+        ) {
             edges {
                 node {
                     name
@@ -39,7 +55,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: -15px;
-    
+
     & > * {
         margin: 15px;
     }
@@ -48,21 +64,21 @@ const Container = styled.div`
 const Projects = () => {
     const data = useStaticQuery(query);
 
-    const projects = data.allMdx.edges.map((e: any) => e.node);
-    projects.sort(p => -p.frontmatter.order);
+    const projects = data.projects.nodes;
+    projects.sort(p => -p.childMdx.frontmatter.order);
 
-    const images = data.allFile.edges.map(e => e.node);
+    const images = data.images.edges.map(e => e.node);
 
     return (
         <Container>
             {projects.map(project => (
                 <Project
-                    key={project.id}
-                    project={project}
+                    key={project.name}
+                    project={project.childMdx}
                     image={images.find(
                         i =>
                             removeFileExtension(i.name) ===
-                            removeFileExtension(project.parent.name)
+                            removeFileExtension(project.name)
                     )}
                 />
             ))}
