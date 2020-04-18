@@ -1,7 +1,12 @@
 module.exports = {
     siteMetadata: {
-        title: `This Is Not a Blog`,
-        description: `My digital garden. A loosely coupled collection of my thoughts, ideas and projects.`,
+        siteTitle: `This Is Not a Blog`,
+        siteTitleAlt: `This Is Not a Blog - Maxence Frenette's Website`,
+        siteHeadline: `This Is Not a Blog - Maxence Frenette's Website`,
+        siteUrl: `https://maxencefrenette.com`,
+        siteLanguage: `en`,
+        siteDescription: `My digital garden. A loosely coupled collection of my thoughts, ideas and projects.`,
+        siteImage: `/og-image.png`,
         author: `Maxence Frenette`
     },
     plugins: [
@@ -66,8 +71,8 @@ module.exports = {
             options: {
                 navigation: [
                     {
-                        title: `Blog`,
-                        slug: `/blog`
+                        title: `Home`,
+                        slug: `/`
                     },
                     {
                         title: `Projects`,
