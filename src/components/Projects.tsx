@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import Project from './project';
+import Project from './Project';
 import styled from 'styled-components';
 
 function removeFileExtension(filename: string): string {
