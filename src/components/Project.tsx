@@ -60,7 +60,6 @@ interface ProjectProps {
 }
 
 const Project: React.FC<ProjectProps> = ({ project, image }) => {
-    console.log(project, image);
     const { frontmatter, body } = project;
     const { title, github, live } = frontmatter;
 
