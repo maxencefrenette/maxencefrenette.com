@@ -7,7 +7,7 @@ module.exports = {
         siteLanguage: `en`,
         siteDescription: `My digital garden. A loosely coupled collection of my thoughts, ideas and projects.`,
         siteImage: `/og-image.png`,
-        author: `Maxence Frenette`
+        author: `Maxence Frenette`,
     },
     plugins: [
         `gatsby-plugin-typescript`,
@@ -16,36 +16,36 @@ module.exports = {
             options: {
                 emitSchema: {
                     'src/__generated__/gatsby-schema.graphql': true,
-                    'src/__generated__/gatsby-introspection.json': true
+                    'src/__generated__/gatsby-introspection.json': true,
                 },
                 emitPluginDocuments: {
-                    'src/__generated__/gatsby-plugin-documents.graphql': true
-                }
-            }
+                    'src/__generated__/gatsby-plugin-documents.graphql': true,
+                },
+            },
         },
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
-                path: `content/images`
-            }
+                path: `content/images`,
+            },
         },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'project-images',
                 path: 'content/projects',
-                ignore: [`**/*.mdx`]
-            }
+                ignore: [`**/*.mdx`],
+            },
         },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'projects',
                 path: 'content/projects',
-                ignore: ['**/*.png']
-            }
+                ignore: ['**/*.png'],
+            },
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
@@ -58,12 +58,22 @@ module.exports = {
                 background_color: `#663399`,
                 theme_color: `#663399`,
                 display: `minimal-ui`,
-                icon: `content/images/gatsby-icon.png`
-            }
+                icon: `content/images/gatsby-icon.png`,
+            },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: 'UA-15461090-7',
+                head: false,
+                anonymize: true,
+                respectDNT: true,
+                pageTransitionDelay: 0,
+            },
+        },
 
         // Theme config
         {
@@ -72,20 +82,20 @@ module.exports = {
                 navigation: [
                     {
                         title: `Home`,
-                        slug: `/`
+                        slug: `/`,
                     },
                     {
                         title: `Projects`,
-                        slug: `/projects`
-                    }
+                        slug: `/projects`,
+                    },
                 ],
                 externalLinks: [
                     {
                         name: `Github`,
-                        url: `https://github.com/maxencefrenette`
-                    }
-                ]
-            }
-        }
-    ]
+                        url: `https://github.com/maxencefrenette`,
+                    },
+                ],
+            },
+        },
+    ],
 };
