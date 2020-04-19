@@ -5,6 +5,8 @@
   "author": "Maxence Frenette <maxence.frenette@gmail.com>",
   "dependencies": {
     "@lekoarts/gatsby-theme-minimal-blog": "^2.2.9",
+    "@mdx-js/mdx": "^1.5.8",
+    "@mdx-js/react": "^1.5.8",
     "@types/styled-components": "^5.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "eslint": "^6.8.0",
@@ -24,12 +26,14 @@
     "gatsby-remark-images": "^3.2.4",
     "gatsby-source-filesystem": "^2.2.4",
     "gatsby-transformer-sharp": "^2.4.6",
+    "graphql": "^15.0.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.5",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
+    "react-is": "^16.13.1",
     "styled-components": "^5.1.0",
     "typescript": "^3.8.3"
   },
