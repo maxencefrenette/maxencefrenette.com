@@ -72,7 +72,7 @@ const Project: React.FC<ProjectProps> = ({ project, image }) => {
         {live && <a href={live}>Live</a>}
       </TitleContainer>
       <Description>
-        <TypedMDXRenderer children={body} />
+        <TypedMDXRenderer>{body}</TypedMDXRenderer>
       </Description>
     </Container>
   );
