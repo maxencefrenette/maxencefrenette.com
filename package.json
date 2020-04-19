@@ -23,7 +23,7 @@
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-remark-images": "^3.2.2",
     "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-transformer-sharp": "^2.4.3",
+    "gatsby-transformer-sharp": "^2.4.6",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.5",
     "prettier": "^2.0.4",
