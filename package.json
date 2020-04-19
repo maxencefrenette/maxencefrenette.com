@@ -1,39 +1,52 @@
 {
-    "name": "maxencefrenette.com",
-    "private": true,
-    "description": "My personal website",
-    "author": "Maxence Frenette <maxence.frenette@gmail.com>",
-    "dependencies": {
-        "@lekoarts/gatsby-theme-minimal-blog": "^2.2.6",
-        "@types/styled-components": "^5.0.1",
-        "babel-plugin-styled-components": "^1.10.7",
-        "gatsby": "^2.20.16",
-        "gatsby-image": "^2.3.1",
-        "gatsby-plugin-google-analytics": "^2.2.4",
-        "gatsby-plugin-manifest": "^2.3.3",
-        "gatsby-plugin-mdx": "^1.1.7",
-        "gatsby-plugin-offline": "^3.1.2",
-        "gatsby-plugin-react-helmet": "^3.2.1",
-        "gatsby-plugin-sharp": "^2.5.3",
-        "gatsby-plugin-styled-components": "^3.2.1",
-        "gatsby-plugin-typegen": "^2.0.1",
-        "gatsby-plugin-typescript": "^2.3.1",
-        "gatsby-remark-images": "^3.2.2",
-        "gatsby-source-filesystem": "^2.2.2",
-        "gatsby-transformer-sharp": "^2.4.3",
-        "prettier": "^1.19.1",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
-        "react-helmet": "^5.2.1",
-        "styled-components": "^5.1.0"
-    },
-    "scripts": {
-        "start": "yarn develop",
-        "build": "gatsby build",
-        "develop": "gatsby develop",
-        "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-        "serve": "gatsby serve",
-        "clean": "gatsby clean",
-        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  "name": "maxencefrenette.com",
+  "private": true,
+  "description": "My personal website",
+  "author": "Maxence Frenette <maxence.frenette@gmail.com>",
+  "dependencies": {
+    "@lekoarts/gatsby-theme-minimal-blog": "^2.2.6",
+    "@types/styled-components": "^5.0.1",
+    "babel-plugin-styled-components": "^1.10.7",
+    "gatsby": "^2.20.16",
+    "gatsby-image": "^2.3.1",
+    "gatsby-plugin-google-analytics": "^2.2.4",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-mdx": "^1.1.7",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sharp": "^2.5.3",
+    "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-plugin-typegen": "^2.0.1",
+    "gatsby-plugin-typescript": "^2.3.1",
+    "gatsby-remark-images": "^3.2.2",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-sharp": "^2.4.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.5",
+    "prettier": "^2.0.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^5.1.0"
+  },
+  "scripts": {
+    "start": "yarn develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,yaml,md,mdx}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
