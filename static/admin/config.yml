@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: content/images
+public_folder: /static
+
+collections:
+  - name: projects
+    label: Projects
+    folder: content/projects
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Github", name: "github", widget: "string" }
+      - { label: "Live", name: "live", widget: "string" }
+  - name: posts
+    label: Posts
+    folder: content/posts
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }

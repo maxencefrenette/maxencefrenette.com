@@ -72,6 +72,7 @@ module.exports = {
         pageTransitionDelay: 0,
       },
     },
+    `gatsby-plugin-netlify-cms`,
 
     // Theme config
     {
