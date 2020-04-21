@@ -15,6 +15,7 @@ collections:
       - { label: "Order", name: "order", widget: "number" }
       - { label: "Github", name: "github", widget: "string" }
       - { label: "Live", name: "live", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: posts
     label: Posts
     folder: content/posts
