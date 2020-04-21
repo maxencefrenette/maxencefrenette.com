@@ -22,6 +22,11 @@ collections:
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - label: Date
+        name: date
+        widget: datetime
+        format: YYYY-MM-DD
+        dateFormat: YYYY-MM-DD
+        timeFormat: false
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
