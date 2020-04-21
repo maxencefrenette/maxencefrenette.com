@@ -30,7 +30,7 @@
     "graphql": "14",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
-    "netlify-cms-app": "^2.12.10",
+    "netlify-cms-app": "^2.12.11",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
