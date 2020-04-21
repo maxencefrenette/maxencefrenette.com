@@ -36,7 +36,7 @@ module.exports = {
       options: {
         name: "project-images",
         path: "content/projects",
-        ignore: [`**/*.mdx`],
+        ignore: [`**/*.md`],
       },
     },
     {
