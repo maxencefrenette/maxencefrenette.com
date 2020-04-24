@@ -10,11 +10,18 @@ function removeFileExtension(filename: string): string {
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: -15px;
 
   & > * {
     margin: 15px;
   }
+`;
+
+const Fill = styled.div`
+  width: 300px;
+  margin-top: 0;
+  margin-bottom: 0;
 `;
 
 const Projects = () => {
@@ -60,6 +67,9 @@ const Projects = () => {
           )}
         />
       ))}
+      {/* Fills the remaining space to prevent the bottom row from being centered */}
+      <Fill />
+      <Fill />
     </Container>
   );
 };
