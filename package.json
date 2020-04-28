@@ -4,7 +4,7 @@
   "description": "My personal website",
   "author": "Maxence Frenette <maxence.frenette@gmail.com>",
   "dependencies": {
-    "@lekoarts/gatsby-theme-minimal-blog": "^2.2.9",
+    "@lekoarts/gatsby-theme-minimal-blog": "^2.3.0",
     "@mdx-js/mdx": "^1.5.9",
     "@mdx-js/react": "^1.5.9",
     "@types/styled-components": "^5.1.0",
